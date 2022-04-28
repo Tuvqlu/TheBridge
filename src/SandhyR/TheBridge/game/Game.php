@@ -197,7 +197,7 @@ class Game
             case "LOBBY":
                 foreach ($this->players as $player) {
                     if ($player->isOnline()) {
-                        ScoreFactory::setObjective($player, TextFormat::YELLOW . TextFormat::BOLD . "THE BRIDGE");
+                        ScoreFactory::setObjective($player, TextFormat::GREEN . TextFormat::BOLD . "THE BRIDGE");
                         ScoreFactory::setScoreLine($player, 1, TextFormat::WHITE . "Players: " . TextFormat::GREEN . count($this->players) . "/2");
                         ScoreFactory::setScoreLine($player, 2, TextFormat::WHITE . "Map: " . TextFormat::GREEN . $this->arenainfo["arenaname"]);
                         ScoreFactory::setScoreLine($player, 3, " ");
@@ -214,7 +214,7 @@ class Game
             case "COUNTDOWN":
                 foreach ($this->players as $player) {
                     if ($player->isOnline()) {
-                        ScoreFactory::setObjective($player, TextFormat::YELLOW . TextFormat::BOLD . "THE BRIDGE");
+                        ScoreFactory::setObjective($player, TextFormat::GREEN . TextFormat::BOLD . "THE BRIDGE");
                         ScoreFactory::setScoreLine($player, 1, TextFormat::WHITE . "Players: " . TextFormat::GREEN . count($this->players) . "/2");
                         ScoreFactory::setScoreLine($player, 2, TextFormat::WHITE . "Map: " . TextFormat::GREEN . $this->arenainfo["arenaname"]);
                         ScoreFactory::setScoreLine($player, 3, "    ");
@@ -244,7 +244,7 @@ class Game
                             $player->sendTitle($this->scoredname !== null ? Utils::teamToColor($this->teams[strtolower($this->scoredname)]) . $this->scoredname . TextFormat::GRAY . " scored" : "", TextFormat::GRAY . "Cages will open in " . TextFormat::GREEN . $this->cagecountdown);
                             $player->getWorld()->addSound($player->getPosition(), new PopSound());
                         }
-                        ScoreFactory::setObjective($player, TextFormat::YELLOW . TextFormat::BOLD . "THE BRIDGE");
+                        ScoreFactory::setObjective($player, TextFormat::GREEN . TextFormat::BOLD . "THE BRIDGE");
                         ScoreFactory::setScoreLine($player, 1, TextFormat::WHITE . "Time left: " . TextFormat::GREEN . Utils::intToString($this->timer));
                         ScoreFactory::setScoreLine($player, 2, " ");
                         ScoreFactory::setScoreLine($player, 3, TextFormat::RED . TextFormat::BOLD . "[R]" . TextFormat::RESET . Utils::RintToPoint($this->playerinfo[array_search("red", $this->teams)]["goals"]));
@@ -280,8 +280,8 @@ class Game
             case "RESTARTING":
                 foreach ($this->players as $player) {
                     if ($player->isOnline()) {
-                        ScoreFactory::setObjective($player, TextFormat::YELLOW . TextFormat::BOLD . "THE BRIDGE");
-                        ScoreFactory::setScoreLine($player, 1, TextFormat::WHITE . "Restarting in " . TextFormat::GREEN . $this->restartcountdown);
+                        ScoreFactory::setObjective($player, TextFormat::GREEN . TextFormat::BOLD . "THE BRIDGE");
+                        ScoreFactory::setScoreLine($player, 1, TextFormat::WHITE . "New Game in: " . TextFormat::GREEN . $this->restartcountdown);
                         ScoreFactory::setScoreLine($player, 2, " ");
                         ScoreFactory::setScoreLine($player, 3, TextFormat::RED . TextFormat::BOLD . "[R]" . TextFormat::RESET . Utils::RintToPoint($this->playerinfo[array_search("red", $this->teams)]["goals"]));
                         ScoreFactory::setScoreLine($player, 4, TextFormat::BLUE . TextFormat::BOLD . "[B]" . TextFormat::RESET . Utils::BintToPoint($this->playerinfo[array_search("blue", $this->teams)]["goals"]));
