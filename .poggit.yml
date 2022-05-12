@@ -3,7 +3,7 @@ build-by-default: true
 branches:
 - main
 projects:
-  TheBridge:
+  TheBridge:  
     path: ""
     libs:
       - src: AIPTU/Commando/Commando
