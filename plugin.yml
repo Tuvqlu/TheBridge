@@ -4,6 +4,6 @@ author: SandhyR
 api: 4.0.0
 version: 1.0
 
-permissions:
+permissions: 
   thebridge.set:
     default: op
